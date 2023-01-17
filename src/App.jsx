@@ -1,5 +1,6 @@
 import React from "react";
 import { Cards, Footer, Home, Navbar } from "./components";
+import BloodBanks from "./components/BloodBanks";
 // import BloodBank from "./BloodBank.jsx";
 const App = () => {
   // return <BloodBank />;
@@ -9,8 +10,8 @@ const App = () => {
       <Navbar />
 
       <Home />
-      {/* <Cards />
-      <Footer /> */}
+      <BloodBanks />
+      <Footer />
     </div>
   );
 };

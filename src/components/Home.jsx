@@ -1,9 +1,7 @@
 import React from "react";
-import HomeImage from "../assets/homewatchimage.png";
 import Card from "./Card";
-import { homeCardData as cardData } from "../assets/data";
 import styled from "styled-components";
-
+import HomeImage from "../assets/images/homeimage.png";
 const Button = styled.button`
   box-sizing: border-box;
   width: ${(props) => (props.mdWidth ? props.mdWidth : "7rem")};
@@ -19,13 +17,14 @@ const Button = styled.button`
 const Home = () => {
   return (
     <div
-      className=" text-gray-300 mt-[1rem] w-[100%] relative z-[10]  max-h-[60rem] sm:min-h-[40rem] md:min-h-[22rem] md:max-h-[35rem] md:mt-[2rem] lg:mt-[1rem] xl:min-h-[30rem] xl:max-h-[35rem] 2xl:min-h-[30vh] xl:mt-[3rem] 2xl:max-h-[25rem]  2xl:mt-[8rem]"
-      id="home">
+      className=" text-gray-300 mt-[1rem] w-[100%]  relative z-[10]  max-h-[60rem] sm:min-h-[40rem] md:min-h-[34rem] md:max-h-[50rem] md:mt-[2rem] lg:mt-[1rem] xl:min-h-[42rem] xl:max-h-[50rem] 2xl:min-h-[65rem] xl:mt-[3rem] 2xl:max-h-[50rem]  2xl:mt-[8rem]"
+      id="home"
+    >
       <div className="flex w-[80%] flex-wrap items-center justify-center   max-w-[70rem]  m-auto md:flex-nowrap  2xl:mt-[6rem] ">
         <div className="flex max-w-[22rem] flex-col xl:max-w-[27rem] 2xl:max-w-[30rem]">
           <h1 className=" text-[2rem] lg:text-[2.5rem] font-semibold xl:text-[3rem]">
             {" "}
-            Landing page for showcase watch
+            BLOOD DONATION
           </h1>
           <p className=" text-gray-400 text-[0.8rem] mt-[1.6rem] xl:text-[1.3rem]">
             {" "}
@@ -38,7 +37,13 @@ const Home = () => {
           <div className="flex gap-[1rem] mt-[2rem]"></div>
         </div>
         <div className="w-[90%]  relative z-[10] max-w-[30rem] mt-[3rem] mx-auto md:mt-0 lg:mt-[3rem]">
-          <img className="w-[90%]" src="homeimage.png" alt="hello" />
+          <img
+            className="w-[90%]"
+            // src="/src/assets/images/homeimage.png"
+            src={HomeImage}
+            // src="homeimage.jpg"
+            alt="hello"
+          />
         </div>
       </div>
     </div>
