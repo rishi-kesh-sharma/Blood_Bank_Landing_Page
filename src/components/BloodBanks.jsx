@@ -9,9 +9,15 @@ const BloodBanks = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [cardsData, setCardsData] = useState(null);
   useEffect(() => {
+    console.log(currentPage);
     const getBanks = async () => {
       const response = await axios.get(
-        `http://localhost:4000/api/bank/all?keyword=${searchQuery}&page=${currentPage}`
+        `http://localhost:4000/api/bank/all?keyword=${searchQuery}&page=${currentPage}`,
+        {
+          headers: {
+            "rows-per-page": 5,
+          },
+        }
       );
       setCardsData(response.data);
     };
@@ -22,7 +28,11 @@ const BloodBanks = () => {
       <h1 className="my-[1rem] text-center text-[2rem] md:text-[2.4rem] md:my-[2rem] lg:text-[2.7rem] xl:text-[3rem] 2xl:text-center w-[100vw] 2xl:text-5xl 2xl:mb-[8rem]">
         Our <span className="text-red-500">Banks</span>
       </h1>
-      <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <SearchBar
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        setCurrentPage={setCurrentPage}
+      />
       <Cards cardsData={cardsData} />
       <Pagination
         currentPage={currentPage}

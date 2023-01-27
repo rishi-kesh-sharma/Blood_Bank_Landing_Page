@@ -6,7 +6,7 @@ import { GrFormPreviousLink } from "react-icons/gr";
 const Pagination = ({ currentPage, setCurrentPage, prev, next }) => {
   console.log(currentPage);
   const handlePrevClick = (e) => {
-    if (currentPage == 1) return;
+    if (currentPage == 1 && !prev) return;
     setCurrentPage(currentPage - 1);
   };
   const handleNextClick = (e) => {

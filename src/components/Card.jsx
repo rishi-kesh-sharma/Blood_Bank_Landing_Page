@@ -5,7 +5,7 @@ import { BsInstagram } from "react-icons/bs";
 import { BsTwitter } from "react-icons/bs";
 const Card = ({ cardItem, open, setOpen, setCurrentModalId }) => {
   const { bankname, address, socialMediaHandles } = cardItem;
-  const { facebook, instagram, twitter, linkedin } = socialMediaHandles;
+  // const { facebook, instagram, twitter, linkedin } = socialMediaHandles;
   const handleOpen = (e) => {
     setOpen(true);
     setCurrentModalId(cardItem._id);
@@ -23,16 +23,16 @@ const Card = ({ cardItem, open, setOpen, setCurrentModalId }) => {
         {address}
       </h2>
       <div className="text-xs text-gray-900  md:text-sm lg:text-xl flex items-center gap-[0.5rem]">
-        <a href={facebook}>
+        <a href={socialMediaHandles?.facebook}>
           <BsFacebook />
         </a>
-        <a href={instagram}>
+        <a href={socialMediaHandles?.instagram}>
           <BsInstagram />
         </a>
-        <a href={twitter}>
+        <a href={socialMediaHandles?.twitter}>
           <BsTwitter />
         </a>
-        <a href={linkedin}>
+        <a href={socialMediaHandles?.linkedin}>
           <BsLinkedin />
         </a>
       </div>
